@@ -1,0 +1,97 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css";
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif;
+  font-size: 1rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto auto;
+  grid-template-areas: "logo nav search camLink";
+  grid-template-rows: 1fr;
+}
+@media screen and (max-width: 525px){
+  .grid-container {
+    grid-template-columns: auto 1fr 1fr auto auto;
+    grid-template-areas: "ham logo nav search camLink";
+    grid-template-rows: 1fr;
+  }
+}
+.ham{
+  grid-area: ham;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: none;
+  width: auto;
+}
+@media screen and (max-width: 525px){
+  .ham{
+    display: inline-flex;
+    margin: auto 0.5rem;
+  }
+}
+.logo { grid-area: logo; justify-content: start;}
+
+@media screen and (max-width: 525px){
+  .logo {
+    grid-column: 2/3;
+  }
+  .logo img{
+      width: 160px;
+      height:40px;
+      }
+    }
+
+.camLink { grid-area: camLink; }
+.camLink span{ margin:auto  0.5rem; }
+
+.search { grid-area: search;  }
+.search span{ margin:auto  0.5rem; }
+
+.nav { 
+  grid-area: nav; 
+  justify-content: end;
+  color: black;
+  text-decoration: none;
+  cursor:  hand;
+}
+.nav ul li{
+  display: inline;
+  text-decoration: none;
+  padding: 10px;
+}
+.nav ul li a{
+  text-decoration: none;
+}
+@media screen and (max-width: 525px){
+  .nav{display: none;}
+
+}
+
+header{
+  color: #418fce;
+  align-items: center;
+  max-width: 1920px;
+  background: lightgrey;
+  height: 80px;
+}
+@media screen and (max-width: 525px){
+  header{
+    height: 50px;
+  }
+}
+
+main{
+  margin: 0.5rem;
+}
