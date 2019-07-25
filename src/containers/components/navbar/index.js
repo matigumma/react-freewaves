@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './navbar.scss';
+/*
 import { elastic as Menu } from 'react-burger-menu'
-
+ <Menu pageWrapId={"root"} outerContainerId={"main-wrap"}>
+    <Link to="/">Home</Link>
+    <Link to="/about-us">About</Link>
+</Menu>
+*/
 class Navbar extends Component {
     state = { 
         isLoaded: false
@@ -21,10 +27,7 @@ class Navbar extends Component {
                 <header className="grid-container">
                     <div className="ham">
                         <span className="fas fa-bars fa-lg"></span>
-                        <Menu pageWrapId={"root"} outerContainerId={"main-wrap"}>
-                            <Link to="/">Home</Link>
-                            <Link to="/about-us">About</Link>
-                        </Menu>
+                       
                     </div>
                     <div className="logo">
                         <img src="http://freewaves.live/wp-content/uploads/logo.png" />

@@ -1,0 +1,97 @@
+.grid-container {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto auto;
+  grid-template-areas: "logo nav search camLink";
+  grid-template-rows: 1fr;
+}
+@media screen and (max-width: 525px){
+  .grid-container {
+    align-items: center;
+    grid-template-columns: auto 1fr 1fr auto auto;
+    grid-template-areas: "ham logo nav search camLink";
+    grid-template-rows: 1fr;
+  }
+}
+
+.ham{
+  grid-area: ham;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-content: center;
+  align-content: center;
+}
+.ham span{
+  display: none;
+  margin-left: 1rem;
+}
+@media screen and (max-width: 525px){
+  .ham span{
+    display: grid;
+  }
+}
+
+.logo { grid-area: logo; justify-content: start;}
+.logo img{
+    width: 170px;
+    margin-left: 1.5rem;
+}
+@media screen and (max-width: 525px){
+  .logo {
+    grid-column: 2/3;
+  }
+  .logo img{
+      width: 160px;
+      }
+}
+
+.camLink { 
+  grid-area: camLink;   
+  grid-column: 5/6;
+  grid-row: 1/2;
+  justify-content: center;
+  align-content: center;}
+.camLink span{ display: grid; margin-right: 1rem; }
+
+.search { 
+  grid-area: search;  
+  grid-column: 4/5;
+  grid-row: 1/2;
+  justify-content: center;
+  align-content: center; }
+.search span{ display: grid; margin-right: 1rem; }
+
+.nav { 
+  grid-area: nav; 
+  justify-content: end;
+  color: black;
+  text-decoration: none;
+  cursor:  hand;
+}
+.nav ul li{
+  display: inline;
+  text-decoration: none;
+  padding: 10px;
+}
+.nav ul li a{
+  text-decoration: none;
+}
+@media screen and (max-width: 525px){
+  .nav{display: none;}
+
+}
+
+header{
+  margin: 0;
+  padding: 0;
+  /* border-radius: 10px 10px 0px 0px; */
+  color: #418fce;
+  max-width: 1920px;
+  background: white;
+  height: 80px;
+}
+@media screen and (max-width: 525px){
+  header{
+    height: 50px;
+  }
+}

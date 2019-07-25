@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import CamCard from './CamCard';
 import { Link } from 'react-router-dom';
+import './cams.scss';
 
 class Cams extends Component {
     state = {
@@ -10,7 +11,7 @@ class Cams extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://freewaves.live/wp-json/wp/v2/projects')
+        axios.get('http://freewaves.live/wp-json/wp/v2/projects?per_page=100')
             .then(res => this.setState({
                 projects: res.data,
                 isLoaded: true

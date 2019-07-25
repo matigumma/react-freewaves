@@ -1,0 +1,61 @@
+.camcontainer{
+  display: grid;
+  width: 1110px;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+}
+.publi{
+    border: 1px saddlebrown solid!important;
+}
+.contcam{
+  display: grid;
+  grid-template-columns: 120px auto;
+  grid-template-areas: "imgcam infocam";
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  width: 355px;
+  height: 90px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px lightgrey solid;
+  .imgcam{
+      grid-area: imgcam;
+      grid-column: 1/2;
+      width: 120px;
+      background: grey;
+      img{
+          width: 120px;
+          height: 88px;
+      }
+  }
+  .infocam{
+      grid-area: infocam;
+      grid-column: 2/3;
+      width: auto;
+      padding: 5px;
+      h3 {
+          font-size: 1rem;
+          text-transform: uppercase;
+          margin: 0px 0px 5px 0px;
+      }
+      h4 {
+          font-size: .7rem;
+          margin: 0px 0px 10px 0px;
+      }
+  }
+}
+@media screen and (max-width: 525px){
+  .camcontainer{
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
+  .contcam{
+    width: 100%;
+    margin-bottom: 0px;
+    background: #ffffff;
+    border: 1px lightslategray solid;
+  }
+} 
