@@ -9,7 +9,7 @@ class HomeSlider extends Component {
 
                 <Carousel showArrows={true} showThumbs={false} showIndicators={true} showStatus={false} emulateTouch infiniteLoop >
                     <div>
-                        <img src="http://freewaves.live/wp-content/uploads/slide1.jpg" />
+                        <img src="http://freewaves.live/wp-content/uploads/slide1.jpg" alt="slider-1"/>
                         <div className="wrapContSlider">
                             <div className="constSlider">
                                 TU SPOT
@@ -19,10 +19,10 @@ class HomeSlider extends Component {
                         </div>
                     </div>
                     <div>
-                        <img src="http://freewaves.live/wp-content/uploads/slide2.jpg" />
+                    <img src="http://freewaves.live/wp-content/uploads/slide2.jpg" alt="slider-2"/>
                     </div>
                     <div>
-                        <img src="http://freewaves.live/wp-content/uploads/slide3.jpg" />
+                    <img src="http://freewaves.live/wp-content/uploads/slide3.jpg" alt="slider-3"/>
                     </div>
                 </Carousel>
 

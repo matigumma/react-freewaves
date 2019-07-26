@@ -8,14 +8,22 @@ import App from './containers/app'
 import 'sanitize.css/sanitize.css'
 import './index.css'
 
+//store - global state
+//action name that describe the action to do
+// reducers  check the action to apply to the store
+//dispach luncher
+
+
+
+
 const target = document.querySelector('#root')
 
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <React.Fragment>
+      <div id="outerW">
         <App />
-      </React.Fragment>
+      </div>
     </ConnectedRouter>
   </Provider>,
   target

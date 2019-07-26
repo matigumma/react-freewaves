@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CamCard from './CamCard';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import './cams.scss';
+import HoldingCams from './holdingCams';
+
 
 class Cams extends Component {
     state = {
@@ -11,7 +13,7 @@ class Cams extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://freewaves.live/wp-json/wp/v2/projects?per_page=100')
+        axios.get('http://freewaves.live/wp-json/wp/v2/projects?per_page=9')
             .then(res => this.setState({
                 projects: res.data,
                 isLoaded: true
@@ -25,13 +27,13 @@ class Cams extends Component {
             console.log(projects);
         return ( 
             <div className="camcontainer">
-                    {projects.map(pro => (
-                            <CamCard key={pro.id} project={pro} />
-                        ))}
+                {projects.map(pro => (<CamCard key={pro.id} project={pro} />))}
             </div>
          );
         }
-        return <div className="camcontainer"><h3>Loading cams...</h3></div>
+        return (
+            <HoldingCams />// component to show loading cam list..
+        );
     }
 }
 
