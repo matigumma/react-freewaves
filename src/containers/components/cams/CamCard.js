@@ -7,15 +7,30 @@ class CamCard extends Component {
         isLoaded: false
      }
 
-    componentDidMount() {
+    componentDidMount(e) {
         //here will load images for cards
         const { _thumbnail_id } = this.props.project;
-        axios.get(`http://freewaves.live/wp-json/wp/v2/media/${_thumbnail_id}`)
-            .then(res => this.setState({
+        const CamCardObj = this;
+        let atempt = 0;
+        function getFeatured(){
+            console.log(CamCardObj);
+            axios.get(`http://freewaves.live/wp-json/wp/v2/media/${_thumbnail_id}`)
+            .then(res => CamCardObj.setState({
                 featuredImage: res.data.source_url,
                 isLoaded: true
             }))
-            .catch(err => { console.log(err) });
+            .catch(err => { 
+                console.log(err) ;
+                if(atempt<3){
+                    console.log("getFeatured new atempt", atempt);
+                    atempt=atempt+1;
+                    getFeatured();
+                }else{
+                    console.log("max atempt reacherd");
+                }
+            });            
+        };
+        getFeatured();
     }
 
     render() { 
