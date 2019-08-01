@@ -9,6 +9,7 @@ class CamCard extends Component {
 
     componentDidMount(e) {
         //here will load images for cards
+        let arrayPublis = [];
         const { _thumbnail_id } = this.props.project;
         const CamCardObj = this;
         let atempt = 0;

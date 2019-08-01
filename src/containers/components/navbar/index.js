@@ -21,7 +21,6 @@ class Navbar extends Component {
                 <header className="grid-container">
                     <div className="ham">
                         <span className="bm-burger-button fas fa-bars fa-lg"></span>
-                       
                     </div>
                     <div className="logo">
                         <img src="http://freewaves.live/wp-content/uploads/logo.png" alt="Freewaves Logo" />
@@ -29,7 +28,10 @@ class Navbar extends Component {
                     <div className="nav">
                         <ul>
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about-us">About</Link></li>
+                            <li><Link to="/community">Community</Link></li>
+                            <li><Link to="/gallery">Gallery</Link></li>
+                            <li><Link to="/sponsors">Sponsors</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </div>
                     <div className="search">

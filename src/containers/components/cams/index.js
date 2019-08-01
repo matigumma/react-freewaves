@@ -13,7 +13,7 @@ class Cams extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://freewaves.live/wp-json/wp/v2/projects?per_page=30')
+        axios.get('http://freewaves.live/wp-json/wp/v2/projects?per_page=9')
             .then(res => this.setState({
                 projects: res.data,
                 isLoaded: true
